@@ -3,16 +3,16 @@ Create database IF not Exists Megafarma;
 Use Megafarma;
 
 
-Create Table clientes(
-	NomeCliente varchar(30) not null,
-	CPFCliente Varchar(15) not null,
-	CorFavorita varchar(20) not null
+	Create Table clientes(
+		NomeCliente varchar(30) not null,
+		CPFCliente Varchar(15) not null,
+		CorFavorita varchar(20) not null
+		);
+	Create Table Pedidos(
+		IDVenda int not null PRIMARY KEY,
+		DataDoBagulho datetime not null,
+		IDCliente int not null
 	);
-Create Table Pedidos(
-	IDVenda int not null PRIMARY KEY,
-	DataDoBagulho datetime not null,
-	IDCliente int not null
-);
 
 Alter Table clientes
 ADD COLUMN IDCliente int not null first;
@@ -35,7 +35,7 @@ add constraint PK_clientes PRIMARY KEY (IDCliente);
 
 Alter Table Vendas
 add constraint FK_Vendas_clientes FOREIGN KEY (IDCliente)
-references clientes(IDCliente);
+	references clientes(IDCliente);
 
 Alter Table clientes
 ADD COLUMN Bairro varchar(30) not null,
