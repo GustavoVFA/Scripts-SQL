@@ -1,3 +1,8 @@
+/*
+Gustavo Vieira Felicio Amorim 	RM: 22722
+Adriano Ramos de Melo 		  	RM: 
+
+*/
 Create Database Editora;
 USE Editora;
 
